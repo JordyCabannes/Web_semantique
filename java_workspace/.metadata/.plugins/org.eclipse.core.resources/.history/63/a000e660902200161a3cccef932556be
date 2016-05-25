@@ -1,0 +1,141 @@
+import java.io.* ;
+import java.util.*;
+
+
+public class recup_ligne_Montpellier 
+{
+	private String titre;
+	
+
+	private String  realisateur;
+	private int annee_tournage;
+	private Date date_sortie;
+	private String lieu_tournage1;
+	private String lieu_tournage2;
+	private String lieu_tournage3;
+	private String lieu_tournage4;
+	private String lieu_tournage5;
+	private String lieu_tournage6;
+	private String url_description;
+	private String url_image;
+	
+	public recup_ligne_Montpellier( String titre,String  realisateur,int annee_tournage, Date date_sortie, String lieu_tournage1, String lieu_tournage2, String lieu_tournage3, String lieu_tournage4, String lieu_tournage5, String lieu_tournage6)
+	{
+		this.titre=titre;
+		this.realisateur=realisateur;
+		this.annee_tournage =annee_tournage;
+		this.date_sortie=date_sortie;
+		this.lieu_tournage1=lieu_tournage1;
+		this.lieu_tournage2=lieu_tournage2;
+		this.lieu_tournage3=lieu_tournage3;
+		this.lieu_tournage4=lieu_tournage4;
+		this.lieu_tournage5=lieu_tournage5;
+		this.lieu_tournage6=lieu_tournage6;
+		
+	}
+	
+	public void addUrls( String url_description, String url_image)
+	{
+		this.url_description=url_description;
+		this.url_image =url_image ;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getRealisateur() {
+		return realisateur;
+	}
+
+	public void setRealisateur(String realisateur) {
+		this.realisateur = realisateur;
+	}
+
+	public int getAnnee_tournage() {
+		return annee_tournage;
+	}
+
+	public void setAnnee_tournage(int annee_tournage) {
+		this.annee_tournage = annee_tournage;
+	}
+
+	public Date getDate_sortie() {
+		return date_sortie;
+	}
+
+	public void setDate_sortie(Date date_sortie) {
+		this.date_sortie = date_sortie;
+	}
+
+	public String getLieu_tournage1() {
+		return lieu_tournage1;
+	}
+
+	public void setLieu_tournage1(String lieu_tournage1) {
+		this.lieu_tournage1 = lieu_tournage1;
+	}
+
+	public String getLieu_tournage2() {
+		return lieu_tournage2;
+	}
+
+	public void setLieu_tournage2(String lieu_tournage2) {
+		this.lieu_tournage2 = lieu_tournage2;
+	}
+
+	public String getLieu_tournage3() {
+		return lieu_tournage3;
+	}
+
+	public void setLieu_tournage3(String lieu_tournage3) {
+		this.lieu_tournage3 = lieu_tournage3;
+	}
+
+	public String getLieu_tournage4() {
+		return lieu_tournage4;
+	}
+
+	public void setLieu_tournage4(String lieu_tournage4) {
+		this.lieu_tournage4 = lieu_tournage4;
+	}
+
+	public String getLieu_tournage5() {
+		return lieu_tournage5;
+	}
+
+	public void setLieu_tournage5(String lieu_tournage5) {
+		this.lieu_tournage5 = lieu_tournage5;
+	}
+
+	public String getLieu_tournage6() {
+		return lieu_tournage6;
+	}
+
+	public void setLieu_tournage6(String lieu_tournage6) {
+		this.lieu_tournage6 = lieu_tournage6;
+	}
+
+	public String getUrl_description() {
+		return url_description;
+	}
+
+	public void setUrl_description(String url_description) {
+		this.url_description = url_description;
+	}
+
+	public String getUrl_image() {
+		return url_image;
+	}
+
+	public void setUrl_image(String url_image) {
+		this.url_image = url_image;
+	}
+	
+	
+	
+}

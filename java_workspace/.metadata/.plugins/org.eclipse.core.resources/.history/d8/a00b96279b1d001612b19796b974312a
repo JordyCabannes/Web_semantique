@@ -1,0 +1,41 @@
+import java.io.* ;
+import java.util.*;
+
+
+public class recup_ligne_Montpellier 
+{
+	private String titre;
+	private String  realisateur;
+	private int annee_tournage;
+	private Date date_sortie;
+	private String lieu_tournage1;
+	private String lieu_tournage2;
+	private String lieu_tournage3;
+	private String lieu_tournage4;
+	private String lieu_tournage5;
+	private String lieu_tournage6;
+	private String url_description;
+	private String url_image;
+	
+	public recup_ligne_Montpellier( String titre,String  realisateur,int annee_tournage, Date date_sortie, String lieu_tournage1, String lieu_tournage2, String lieu_tournage3, String lieu_tournage4, String lieu_tournage5, String lieu_tournage6)
+	{
+		this.titre=titre;
+		this.realisateur=realisateur;
+		this.annee_tournage =annee_tournage;
+		this.date_sortie=date_sortie;
+		this.lieu_tournage1=lieu_tournage1;
+		this.lieu_tournage2=lieu_tournage2;
+		this.lieu_tournage3=lieu_tournage3;
+		this.lieu_tournage4=lieu_tournage4;
+		this.lieu_tournage5=lieu_tournage5;
+		this.lieu_tournage6=lieu_tournage6;
+		
+	}
+	
+	public void addUrls( String url_description, String url_image)
+	{
+		this.url_description=url_description;
+		this.url_image =url_image ;
+	}
+	
+}

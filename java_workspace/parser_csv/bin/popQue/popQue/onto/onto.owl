@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/nathalie/ontologies/2015/4/untitled-ontology-56#"
+     xml:base="http://www.semanticweb.org/nathalie/ontologies/2015/4/untitled-ontology-56"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nathalie/Onto"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#aReal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nathalie/Onto#aReal">
+        <rdfs:label xml:lang="fr">a pour réalisateur</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nathalie/Onto#OWLClass_d61896ca_727f_4315_b28e_9c5a4bb7cfb7"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#seSitueEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nathalie/Onto#seSitueEn">
+        <rdfs:label xml:lang="fr">se situe en</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#tourneA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nathalie/Onto#tourneA">
+        <rdfs:label xml:lang="fr">tourné à</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nathalie/Onto#OWLClass_7e1542c1_f5d8_44fd_8ef2_b7c985644580"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nathalie/Onto#film"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nathalie/Onto#tourneA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nathalie/Onto#seSitueEn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#aPourDuree -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nathalie/Onto#aPourDuree">
+        <rdfs:label xml:lang="fr">a pour durée en minute</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#OWLClass_7e1542c1_f5d8_44fd_8ef2_b7c985644580 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nathalie/Onto#OWLClass_7e1542c1_f5d8_44fd_8ef2_b7c985644580">
+        <rdfs:label xml:lang="fr">lieu</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#OWLClass_9909e720_b6ba_4424_bc8c_a57f92aa7a1e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nathalie/Onto#OWLClass_9909e720_b6ba_4424_bc8c_a57f92aa7a1e">
+        <rdfs:label xml:lang="fr">film en France</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nathalie/Onto#film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nathalie/Onto#tourneA"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/nathalie/Onto#France"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nathalie/Onto#film"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#OWLClass_d61896ca_727f_4315_b28e_9c5a4bb7cfb7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nathalie/Onto#OWLClass_d61896ca_727f_4315_b28e_9c5a4bb7cfb7">
+        <rdfs:label xml:lang="fr">realisateur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#courtMetrage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nathalie/Onto#courtMetrage">
+        <rdfs:label xml:lang="fr">court-métrage</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nathalie/Onto#film"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nathalie/Onto#aPourDuree"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">59</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nathalie/Onto#film"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#film -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nathalie/Onto#film">
+        <rdfs:label xml:lang="fr">film</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nathalie/Onto#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nathalie/Onto#France">
+        <rdfs:label xml:lang="fr">France</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
