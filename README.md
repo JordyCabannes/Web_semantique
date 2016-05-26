@@ -6,10 +6,10 @@ Il faut mettre le bon chemin vers les fichiers csv à parser, ces fichiers se tr
 /java_workspace/TP_Web_Semantique
 
 Il faut aussi importer dans le projet les 4 librairies : 
-HermiT.jar
-java-json.jar
-json-20141113.jar
-owlapi-distribution-3.4.10.jar
+HermiT.jar ,   
+java-json.jar ,   
+json-20141113.jar ,      
+owlapi-distribution-3.4.10.jar ,     
 
 Elles se trouvent dans le dossier Web_semantique/java_workspace/parser_csv/bin
 
