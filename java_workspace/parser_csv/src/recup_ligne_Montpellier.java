@@ -2,6 +2,8 @@ import java.io.* ;
 import java.util.*;
 
 
+/*Cette classe permet de stocker les informations du fichier de données de Montpellier*/
+
 public class recup_ligne_Montpellier 
 {
 	private String titre;

@@ -1,4 +1,4 @@
-package mashup;
+package OMDB.src.mashup;
 
 import java.io.File;
 
@@ -10,8 +10,11 @@ public class main {
 	public static void main(String args[])
    {
      OMDBProxy omdbProxy = new OMDBProxy();
+     
+     
+     
+     
      System.out.println(omdbProxy.getMovieInfos("the artist").get("imdbRating"));
    
    }
-
 }

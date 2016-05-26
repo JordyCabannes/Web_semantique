@@ -1,6 +1,7 @@
-import java.io.* ;
-import java.util.*;
+import java.util.Date;
 
+
+/*Cette classe permet de stocker les informations du fichier de données de Paris*/
 
 public class recup_ligne_Paris 
 {

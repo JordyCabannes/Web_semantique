@@ -102,9 +102,6 @@ import java.util.HashMap;
  */
 public class query {
 
-	
-	
-
    
     public static void main(String[] args) {
         try {

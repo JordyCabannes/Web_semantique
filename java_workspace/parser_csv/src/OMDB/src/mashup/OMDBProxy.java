@@ -1,20 +1,21 @@
-package mashup;
+package OMDB.src.mashup;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.Iterator;
 
-import org.json.JSONObject; // penser à rajouter la bibliothèque json-20141113 disponible dans le dossier lib
+
+
+import org.json.JSONObject;
 
 public class OMDBProxy {
 
-	private String baseUrl = "http://www.omdbapi.com/?y=&plot=short&r=json&t=";//base de l'url correspondant à la requête get qui devra être compléter avec le nom du film à considérer
-	
+	private String baseUrl = "http://www.omdbapi.com/?type=movie&y=&plot=short&r=json&t=";
 	public OMDBProxy()
 	{
 		
@@ -35,14 +36,19 @@ public class OMDBProxy {
 	         conn = (HttpURLConnection) url.openConnection();
 	         conn.setRequestMethod("GET");
 	         rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	         
+	        
+	         
 	         while ((line = rd.readLine()) != null) {
 	            result += line;
 	         }
 	         rd.close();
-	         
+	     System.out.println(url);
          JSONObject obj = new JSONObject(result);
-         for(String key : obj.keySet())
+         Iterator<String> iterator = obj.keys();
+         while(iterator.hasNext())
          {
+        	 String key = iterator.next();
         	 String val = obj.getString(key);
         	 ret.put(key, val);
          }

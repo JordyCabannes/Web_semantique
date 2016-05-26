@@ -1,0 +1,14 @@
+import java.io.* ;
+import java.util.*;
+
+public class TraitementResOMDB 
+{
+	public TraitementResOMDB(){}
+	
+	public int traitementRuntime(String runtime)
+	{
+		String a  = runtime.substring(0,runtime.length-4); 
+		return  Integer.parseInt(a);
+	}
+
+}

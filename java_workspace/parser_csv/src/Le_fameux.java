@@ -1,9 +1,12 @@
 import java.io.* ;
 import java.util.*;
+import OMDB.src.mashup.*;
 
 
+/*cette classe permet de parser les fichiers csv*/
 public class Le_fameux 
 {
+	/*listes pour les films de Montpellier et Paris*/
 	private ArrayList<recup_ligne_Montpellier> listMont;
 	private ArrayList<recup_ligne_Paris> listParis;
 	
@@ -16,6 +19,7 @@ public class Le_fameux
 		listParis=  new 	ArrayList<recup_ligne_Paris>();
 	}
 	
+	/*parser de Montpellier**/
 	public void parserMontpellier(String path_file)
 	{
 		
@@ -83,6 +87,8 @@ public class Le_fameux
 		}
 	}
 	 
+	
+	/*parser paris*/
 	@SuppressWarnings("deprecation")
 	public void parserParis(String path_file)
 	{
@@ -154,21 +160,28 @@ public class Le_fameux
 	}
 	
 	
-	//test des parsers
+	
+	
+	//test des parsers and others
 	public static void main(String[] args) {
 		
 		Le_fameux parser = new Le_fameux(); 
-		 parser.parserParis("/home/abdi/java_workspace/TP_Web_Semantique/Paris.csv"); //chemin à adapter à l'execution 
+		parser.parserParis("/home/abdi/java_workspace/TP_Web_Semantique/Paris.csv"); //chemin à adapter à l'execution 
 		parser.parserMontpellier("/home/abdi/java_workspace/TP_Web_Semantique/VilleMTP_MTP_FilmsTournes (1).csv");
 		
-		Iterator<recup_ligne_Paris> it =parser.getListParis().iterator()  ;  
+		Iterator<recup_ligne_Montpellier> it =parser.getListMont().iterator()  ;  
+		OMDBProxy obj = new OMDBProxy();
 		
-		int cpt=0;
-		while(it.hasNext()&& cpt<300)
+	
+		while(it.hasNext())
 		{
-			cpt++;
-			System.out.println(it.next().getTitre());
+		
+			recup_ligne_Montpellier ligne =it.next();
+			HashMap<String,String> retour =obj.getMovieInfos(ligne.getTitre());
+			
+			System.out.println(retour.get("Runtime"));
 		}
+		System.out.println("done");
 	}
 
 }
