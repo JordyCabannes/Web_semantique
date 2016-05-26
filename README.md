@@ -2,10 +2,12 @@
 
 
 /************************** Partie facultative **************************/
+
 Tout d'abord il faut changer les chemins se trouvant aux lignes 169 et 170 de la classe Le_fameux.java. Cette classe se
 se trouve dans le dossier Web_semantique/java_workspace/parser_csv/src
 Il faut mettre le bon chemin vers les fichiers csv à parser, ces fichiers se trouvent dans le dossier 
 /java_workspace/TP_Web_Semantique
+
 /************************************************************************/
 
 Pour peupler l'ontologie TP1.owl, il faut aller dans la classe populate.java se trouvant dans le dossier
